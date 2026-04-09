@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "../src/tokens.css";
+@import "../src/tailwind-theme.css";
+
+:root {
+  color-scheme: dark;
+  font-family: var(--font-sans);
+}
+
+html,
+body,
+#storybook-root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 28%),
+    linear-gradient(180deg, #050505 0%, #111111 100%);
+  color: var(--text);
+}
+
+.sb-show-main,
+.sb-main-padded {
+  background: transparent;
+}

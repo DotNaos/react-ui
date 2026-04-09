@@ -1,0 +1,82 @@
+/**
+ * Design System Tokens
+ *
+ * Central CSS custom properties for consistent styling.
+ * All spacing/radius values use the additive scale.
+ */
+
+:root {
+  /* ========================================
+   * SPACING (additive scale)
+   * s-1 + s-2 = s-3, s-2 + s-3 = s-4, etc.
+   * ======================================== */
+  --s-1: 0.25rem;  /* 4px */
+  --s-2: 0.5rem;   /* 8px */
+  --s-3: 0.75rem;  /* 12px */
+  --s-4: 1.25rem;  /* 20px */
+  --s-5: 2rem;     /* 32px */
+  --s-6: 3.25rem;  /* 52px */
+  --s-7: 5.25rem;  /* 84px */
+
+  /* ========================================
+   * RADII (matches spacing scale)
+   * ======================================== */
+  --r-0: 0;
+  --r-1: 0.25rem;
+  --r-2: 0.5rem;
+  --r-3: 0.75rem;
+  --r-4: 1.25rem;
+  --r-5: 2rem;
+  --r-full: 9999px;
+
+  /* ========================================
+   * COLORS (minimal palette)
+   * ======================================== */
+  /* Backgrounds (3 levels) */
+  --bg-0: #000000;
+  --bg-1: #0a0a0a;
+  --bg-2: #141414;
+
+  /* Border */
+  --border: #2a2a2a;
+
+  /* Text */
+  --text: #fafafa;
+  --text-muted: #666666;
+
+  /* Accent */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+
+  /* Semantic */
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --success: #22c55e;
+
+  /* ========================================
+   * TYPOGRAPHY
+   * ======================================== */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --text-s: 0.75rem;   /* 12px */
+  --text-m: 0.875rem;  /* 14px */
+  --text-l: 1rem;      /* 16px */
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+
+  /* ========================================
+   * TRANSITIONS
+   * ======================================== */
+  --transition-fast: 100ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* ========================================
+   * SHADOWS
+   * ======================================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
