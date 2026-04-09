@@ -18,7 +18,7 @@ import {
   ThemeToggle,
   Tooltip,
 } from "../src";
-import { StoryFrame } from "./helpers";
+import { StoryFrame, StorySurface } from "./helpers";
 
 const meta = {
   title: "React UI/System",
@@ -224,9 +224,11 @@ function ProviderSwitchExample() {
 export const WrappedButton: Story = {
   render: () => (
     <StoryFrame>
-      <Button leadingIcon={<Sparkles />} variant="primary">
-        Wrapped button
-      </Button>
+      <StorySurface widthClassName="w-fit max-w-fit">
+        <Button leadingIcon={<Sparkles />} variant="primary">
+          Wrapped button
+        </Button>
+      </StorySurface>
     </StoryFrame>
   ),
 };
@@ -298,9 +300,11 @@ export const WrappedAccordion: Story = {
 export const WrappedTooltip: Story = {
   render: () => (
     <StoryFrame>
-      <Tooltip content="Stable tooltip surface">
-        <Button variant="outline">Hover me</Button>
-      </Tooltip>
+      <StorySurface widthClassName="w-fit max-w-fit">
+        <Tooltip content="Stable tooltip surface">
+          <Button variant="outline">Hover me</Button>
+        </Tooltip>
+      </StorySurface>
     </StoryFrame>
   ),
 };
@@ -324,7 +328,9 @@ export const WrappedCard: Story = {
 export const WrappedBadge: Story = {
   render: () => (
     <StoryFrame>
-      <Badge tone="success">Wrapped badge</Badge>
+      <StorySurface widthClassName="w-fit max-w-fit">
+        <Badge tone="success">Wrapped badge</Badge>
+      </StorySurface>
     </StoryFrame>
   ),
 };
@@ -332,7 +338,9 @@ export const WrappedBadge: Story = {
 export const WrappedThemeToggle: Story = {
   render: () => (
     <StoryFrame>
-      <ThemeToggle />
+      <StorySurface widthClassName="w-fit max-w-fit">
+        <ThemeToggle />
+      </StorySurface>
     </StoryFrame>
   ),
 };
@@ -340,7 +348,9 @@ export const WrappedThemeToggle: Story = {
 export const WrappedLibraryToggle: Story = {
   render: () => (
     <StoryFrame>
-      <ComponentLibraryToggle />
+      <StorySurface widthClassName="w-fit max-w-fit">
+        <ComponentLibraryToggle />
+      </StorySurface>
     </StoryFrame>
   ),
 };

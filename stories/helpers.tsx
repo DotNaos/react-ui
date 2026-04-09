@@ -9,7 +9,13 @@ export function StoryFrame({
   className?: string;
 }) {
   return (
-    <div className={`flex min-h-screen items-center justify-center p-8 ${className}`.trim()}>
+    <div
+      className={[
+        "flex min-h-screen items-center justify-center p-8 text-[var(--foreground)]",
+        "bg-[var(--background)] transition-colors duration-200",
+        className,
+      ].join(" ").trim()}
+    >
       {children}
     </div>
   );
@@ -26,7 +32,13 @@ export function StorySurface({
 }) {
   return (
     <div
-      className={`w-full ${widthClassName} rounded-3xl border border-white/10 bg-black/25 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.28)] backdrop-blur-sm ${className}`.trim()}
+      className={[
+        `w-full ${widthClassName} rounded-3xl p-6`,
+        "border border-[color:var(--separator)]",
+        "bg-[var(--surface)] text-[var(--surface-foreground)]",
+        "shadow-[var(--surface-shadow)] transition-colors duration-200",
+        className,
+      ].join(" ").trim()}
     >
       {children}
     </div>
