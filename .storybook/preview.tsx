@@ -5,7 +5,12 @@ import { ThemeProvider } from "../src/components/theme-provider";
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider defaultTheme="dark" storageKey="storybook-react-ui-theme">
+      <ThemeProvider
+        componentLibraryStorageKey="storybook-react-ui-library"
+        defaultComponentLibrary="shadcn"
+        defaultTheme="dark"
+        storageKey="storybook-react-ui-theme"
+      >
         <Story />
       </ThemeProvider>
     ),

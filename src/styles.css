@@ -1,5 +1,1 @@
-/*
- * This file is used by shadcn CLI to determine where to inject CSS.
- * The actual CSS variables should be defined in consuming apps.
- * This package only exports the component logic.
- */
+@import "@heroui/styles";

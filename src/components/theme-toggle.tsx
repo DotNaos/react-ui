@@ -1,42 +1,56 @@
 import { Moon, Sun } from "lucide-react";
 import { ReactElement } from "react";
-import { cn } from "../lib/utils";
-import {
-  Button,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../shadcn";
+import { MenuButton } from "../ui";
 import { useTheme } from "./theme-provider";
 
 interface ThemeToggleProps {
-  className?: string;
+  ariaLabel?: string;
 }
 
-export function ThemeToggle({ className }: ThemeToggleProps): ReactElement {
-  const { setTheme } = useTheme();
+const iconStyle = {
+  transition: "transform 220ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms cubic-bezier(0.22, 1, 0.36, 1)",
+};
+
+export function ThemeToggle({
+  ariaLabel = "Toggle theme",
+}: ThemeToggleProps): ReactElement {
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className={cn(className)}>
-          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="start">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <MenuButton
+      ariaLabel={ariaLabel}
+      icon={(
+        <span className="relative flex size-4 items-center justify-center">
+          <Sun
+            className="absolute size-[1.1rem]"
+            style={{
+              ...iconStyle,
+              opacity: resolvedTheme === "dark" ? 0 : 1,
+              transform: resolvedTheme === "dark" ? "scale(0.7) rotate(-90deg)" : "scale(1) rotate(0deg)",
+            }}
+          />
+          <Moon
+            className="absolute size-[1.1rem]"
+            style={{
+              ...iconStyle,
+              opacity: resolvedTheme === "dark" ? 1 : 0,
+              transform: resolvedTheme === "dark" ? "scale(1) rotate(0deg)" : "scale(0.7) rotate(90deg)",
+            }}
+          />
+        </span>
+      )}
+      items={[
+        { id: "light", label: "Light" },
+        { id: "dark", label: "Dark" },
+        { id: "system", label: "System" },
+      ]}
+      onAction={(theme) => {
+        if (theme === "light" || theme === "dark" || theme === "system") {
+          setTheme(theme);
+        }
+      }}
+      size="icon"
+      variant="ghost"
+    />
   );
 }
