@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "../src/tokens.css";
 @import "../src/tailwind-theme.css";
+@import "../src/styles.css";
 
 :root {
   color-scheme: dark;
@@ -15,9 +16,7 @@ body,
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 28%),
-    linear-gradient(180deg, #050505 0%, #111111 100%);
+  background: #0b0d12;
   color: var(--text);
 }
 

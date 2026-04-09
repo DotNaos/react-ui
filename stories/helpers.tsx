@@ -1,43 +1,34 @@
-import { File, Folder, FolderOpen, TerminalSquare } from "lucide-react";
+import { File, FolderOpen, TerminalSquare } from "lucide-react";
 import type { ReactNode } from "react";
 
-export function StorySection({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description?: string;
-  children: ReactNode;
-}) {
-  return (
-    <section className="rounded-[28px] border border-white/10 bg-white/5 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-      <header className="mb-6 space-y-2">
-        <h2 className="text-2xl font-semibold tracking-tight text-white">{title}</h2>
-        {description ? <p className="max-w-3xl text-sm text-white/60">{description}</p> : null}
-      </header>
-      {children}
-    </section>
-  );
-}
-
-export function StoryGrid({ children }: { children: ReactNode }) {
-  return <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{children}</div>;
-}
-
-export function StoryCard({
-  title,
+export function StoryFrame({
   children,
   className = "",
 }: {
-  title: string;
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <div className={`rounded-[22px] border border-white/10 bg-black/25 p-5 ${className}`}>
-      <h3 className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/45">{title}</h3>
-      <div>{children}</div>
+    <div className={`flex min-h-screen items-center justify-center p-8 ${className}`.trim()}>
+      {children}
+    </div>
+  );
+}
+
+export function StorySurface({
+  children,
+  className = "",
+  widthClassName = "max-w-3xl",
+}: {
+  children: ReactNode;
+  className?: string;
+  widthClassName?: string;
+}) {
+  return (
+    <div
+      className={`w-full ${widthClassName} rounded-3xl border border-white/10 bg-black/25 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.28)] backdrop-blur-sm ${className}`.trim()}
+    >
+      {children}
     </div>
   );
 }
@@ -92,4 +83,3 @@ export const sideItems = [
   { id: "library", label: "Library" },
   { id: "archive", label: "Archive" },
 ];
-
