@@ -2,11 +2,11 @@
 
 Shared design tokens, CSS assets, and low-level utilities used by the DotNaos UI packages.
 
-## Contents
+## Install
 
-- CSS token files for colors, spacing, typography, and theme utilities
-- JavaScript token exports for cross-platform consumers
-- Shared helpers like the scale utilities and `cn`
+```bash
+pnpm add @dotnaos/design-system
+```
 
 ## Import
 
@@ -26,6 +26,8 @@ import { designTokens, getSize } from "@dotnaos/design-system";
 pnpm --filter @dotnaos/design-system build
 ```
 
-## CDN usage
+## Licensing
 
-CSS files can be served from the repository tag or package tarball. This package does not ship a browser JS CDN entrypoint.
+This package is published under the MIT license and includes `LICENSE` and `THIRD_PARTY_NOTICES.md` in the npm tarball.
+
+The published output only uses open-source HeroUI packages. No HeroUI Pro code, templates, assets, or components are included.

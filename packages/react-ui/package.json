@@ -4,16 +4,18 @@
   "description": "Web React UI primitives, components, and shell building blocks for DotNaos.",
   "private": false,
   "type": "module",
+  "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "files": [
     "dist",
     "README.md",
-    "components.json",
-    "tailwind.config.ts"
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "build": "pnpm run clean && vite build && tsc -p tsconfig.build.json",
