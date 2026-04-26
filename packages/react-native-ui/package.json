@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.1.13",
+    "react-native": "^0.85.2",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {

@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Deploy Docs
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Storybook
-        run: pnpm build-storybook
+        run: pnpm --filter @dotnaos/docs build
         env:
           STORYBOOK_BASE_PATH: /react-ui/
 
@@ -50,7 +50,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./storybook-static
+          path: ./apps/docs/storybook-static
 
   deploy:
     needs: build

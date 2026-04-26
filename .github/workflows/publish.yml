@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish Packages
 
 on:
   release:
@@ -35,10 +35,20 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
-      - name: Build package
+      - name: Build packages
         run: pnpm build
 
-      - name: Publish package
-        run: pnpm publish --no-git-checks
+      - name: Publish design system
+        run: pnpm --filter @dotnaos/design-system publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish react-ui
+        run: pnpm --filter @dotnaos/react-ui publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish react-native-ui
+        run: pnpm --filter @dotnaos/react-native-ui publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

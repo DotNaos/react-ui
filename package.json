@@ -9,6 +9,6 @@
     "test:cdn": "pnpm --filter @dotnaos/react-ui test:cdn"
   },
   "devDependencies": {
-    "turbo": "^2.5.8"
+    "turbo": "^2.9.6"
   }
 }

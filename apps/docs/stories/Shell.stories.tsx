@@ -74,12 +74,11 @@ export const Shell: Story = {
             </SidenavComponent>
           }
         >
-          <ToolbarComponent className="border-b border-white/10 px-4 py-3">
-            <div className="flex items-center justify-between">
-              <Text>Toolbar</Text>
-              <Text color="muted">3 tabs</Text>
-            </div>
-          </ToolbarComponent>
+          <ToolbarComponent
+            center={<Text>Toolbar</Text>}
+            className="border-b border-white/10 px-4 py-3"
+            right={<Text color="muted">3 tabs</Text>}
+          />
 
           <TabBarComponent className="border-b border-white/10 px-2 py-2">
             <div className="flex gap-2">
@@ -112,12 +111,11 @@ export const Shell: Story = {
             }
           />
 
-          <StatusBarComponent className="border-t border-white/10 px-4 py-2">
-            <div className="flex items-center justify-between">
-              <Text size="s" color="muted">Ready</Text>
-              <Text size="s" color="muted">main</Text>
-            </div>
-          </StatusBarComponent>
+          <StatusBarComponent
+            className="border-t border-white/10 px-4 py-2"
+            left={<Text size="s" color="muted">Ready</Text>}
+            right={<Text size="s" color="muted">main</Text>}
+          />
         </ShellComponent>
       </StorySurface>
     </StoryFrame>
@@ -177,12 +175,11 @@ export const SidenavItem: Story = {
 export const StatusBar: Story = {
   render: () => (
     <StoryFrame>
-      <StatusBarComponent className="w-full max-w-3xl rounded-3xl border border-white/10 bg-black/25 px-4 py-3">
-        <div className="flex items-center justify-between">
-          <Text size="s" color="muted">Ready</Text>
-          <Text size="s" color="muted">main</Text>
-        </div>
-      </StatusBarComponent>
+      <StatusBarComponent
+        className="w-full max-w-3xl rounded-3xl border border-white/10 bg-black/25 px-4 py-3"
+        left={<Text size="s" color="muted">Ready</Text>}
+        right={<Text size="s" color="muted">main</Text>}
+      />
     </StoryFrame>
   ),
 };
@@ -212,12 +209,11 @@ export const TabBar: Story = {
 export const Toolbar: Story = {
   render: () => (
     <StoryFrame>
-      <ToolbarComponent className="w-full max-w-3xl rounded-3xl border border-white/10 bg-black/25 px-4 py-3">
-        <div className="flex items-center justify-between">
-          <Text>Toolbar</Text>
-          <Text color="muted">Actions</Text>
-        </div>
-      </ToolbarComponent>
+      <ToolbarComponent
+        center={<Text>Toolbar</Text>}
+        className="w-full max-w-3xl rounded-3xl border border-white/10 bg-black/25 px-4 py-3"
+        right={<Text color="muted">Actions</Text>}
+      />
     </StoryFrame>
   ),
 };

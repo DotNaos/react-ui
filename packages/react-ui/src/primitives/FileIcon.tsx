@@ -1,5 +1,5 @@
 import { FileIcon as PrimitiveFileIcon } from '@react-symbols/icons/utils';
-import { cn } from '../lib/utils';
+import { cn } from "@dotnaos/design-system/lib/utils";
 import { type IconProps } from './Icon';
 
 export interface FileIconProps extends Omit<

@@ -3,13 +3,13 @@ import { Sparkles } from "lucide-react";
 import {
   Badge as BadgeComponent,
   Box as BoxComponent,
-  Card as CardComponent,
   Center as CenterComponent,
   Divider as DividerComponent,
   FileIcon as FileIconComponent,
   Grid as GridComponent,
   Heading as HeadingComponent,
   Icon as IconComponent,
+  PrimitiveCard as CardComponent,
   Scrollable as ScrollableComponent,
   Spacer as SpacerComponent,
   Spinner as SpinnerComponent,
@@ -147,10 +147,10 @@ export const Spacer: Story = {
   render: () => (
     <StoryFrame>
       <StorySurface widthClassName="max-w-md">
-        <div className="flex flex-col">
-          <div className="rounded-xl bg-white/10 px-4 py-3 text-center">Top</div>
-          <SpacerComponent size={3} />
-          <div className="rounded-xl bg-white/10 px-4 py-3 text-center">Bottom</div>
+        <div className="flex items-center rounded-xl bg-white/5 px-4 py-3">
+          <div className="rounded-lg bg-white/10 px-4 py-2 text-center">Left</div>
+          <SpacerComponent />
+          <div className="rounded-lg bg-white/10 px-4 py-2 text-center">Right</div>
         </div>
       </StorySurface>
     </StoryFrame>
