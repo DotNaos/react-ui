@@ -1,0 +1,13 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronDown } from "lucide-react";
+import * as React from "react";
+import { cn } from "../lib/utils";
+const Accordion = AccordionPrimitive.Root;
+const AccordionItem = React.forwardRef(({ className, ...props }, ref) => (_jsx(AccordionPrimitive.Item, { ref: ref, "data-slot": "accordion-item", className: cn("border-b border-border last:border-b-0", className), ...props })));
+AccordionItem.displayName = "AccordionItem";
+const AccordionTrigger = React.forwardRef(({ className, children, ...props }, ref) => (_jsx(AccordionPrimitive.Header, { className: "flex", children: _jsxs(AccordionPrimitive.Trigger, { ref: ref, "data-slot": "accordion-trigger", className: cn("flex flex-1 items-center justify-between py-3 text-left text-sm font-medium transition-all [&[data-state=open]>svg]:rotate-180", className), ...props, children: [children, _jsx(ChevronDown, { className: "h-4 w-4 text-muted-foreground shrink-0 transition-transform duration-200" })] }) })));
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+const AccordionContent = React.forwardRef(({ className, children, ...props }, ref) => (_jsx(AccordionPrimitive.Content, { ref: ref, "data-slot": "accordion-content", className: cn("overflow-hidden text-sm", className), ...props, children: _jsx("div", { className: "pb-3 pt-0.5", children: children }) })));
+AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };

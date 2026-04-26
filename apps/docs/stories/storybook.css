@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "@dotnaos/design-system/tokens.css";
+@import "@dotnaos/design-system/theme.css";
+@import "@dotnaos/design-system/styles.css";
+
+:root {
+  color-scheme: light dark;
+  font-family: var(--font-sans);
+}
+
+html,
+body,
+#storybook-root,
+.sb-show-main,
+.sb-main-padded {
+  min-height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.sb-show-main,
+.sb-main-padded {
+  background: var(--background);
+  color: var(--foreground);
+}

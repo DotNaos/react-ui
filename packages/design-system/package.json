@@ -1,0 +1,48 @@
+{
+  "name": "@dotnaos/design-system",
+  "version": "0.0.1",
+  "description": "Shared design tokens, CSS assets, and utilities for DotNaos UI packages.",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && tsc -p tsconfig.build.json && pnpm run copy:assets",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "copy:assets": "copyfiles -u 1 \"src/**/*.css\" dist"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./lib/utils": {
+      "types": "./dist/lib/utils.d.ts",
+      "import": "./dist/lib/utils.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./theme.css": "./dist/theme.css",
+    "./styles.css": "./dist/styles.css",
+    "./tailwind-theme.css": "./dist/tailwind-theme.css"
+  },
+  "dependencies": {
+    "@heroui/styles": "^3.0.2",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.9.2"
+  }
+}
