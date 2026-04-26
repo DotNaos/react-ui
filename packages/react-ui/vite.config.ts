@@ -19,6 +19,7 @@ export default defineConfig({
     rollupOptions: {
       external: [/^react(\/.*)?$/, /^react-dom(\/.*)?$/],
       output: {
+        banner: "/* @dotnaos/react-ui */",
         entryFileNames: (chunkInfo) =>
           chunkInfo.name === "index" ? "index.js" : `${chunkInfo.name}/index.js`,
         chunkFileNames: "chunks/[name]-[hash].js",

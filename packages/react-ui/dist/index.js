@@ -1,5 +1,5 @@
 import { jsx, jsxs, Fragment as Fragment$1 } from "react/jsx-runtime";
-import { c as cn$1, a as cva, b as createLucideIcon, X as X$1, t as twMerge, e as extendTailwindMerge, d as clsx, A as Accordion$2, f as AccordionItem$1, g as AccordionTrigger$1, h as AccordionContent, B as Button$2, C as Card$3, i as CardHeader$1, j as CardTitle$1, k as CardDescription$1, l as CardContent$1, m as CardFooter$1, n as Checkbox$2, D as Dialog$1, o as DialogTrigger, p as DialogContent, q as DialogHeader, r as DialogTitle, s as DialogDescription, u as DialogFooter, I as Input$2, v as DropdownMenu$1, w as DropdownMenuTrigger, x as DropdownMenuContent, y as DropdownMenuItem, R as RadioGroup$2, z as RadioGroupItem, S as Select$2, E as SelectTrigger$1, F as SelectValue$1, G as SelectContent, H as SelectItem, T as Tabs$2, J as TabsList, K as TabsTrigger, L as TabsContent, M as Textarea$1, N as TooltipProvider, O as Tooltip$2, P as TooltipTrigger$1, Q as TooltipContent$1, U as ChevronDown, V as ChevronRight } from "./chunks/tooltip-C2kWFYCr.js";
+import { c as cn$1, a as cva, b as createLucideIcon, X as X$1, t as twMerge, e as extendTailwindMerge, d as clsx, A as Accordion$2, f as AccordionItem$1, g as AccordionTrigger$1, h as AccordionContent, B as Button$2, C as Card$3, i as CardHeader$1, j as CardTitle$1, k as CardDescription$1, l as CardContent$1, m as CardFooter$1, n as Checkbox$2, D as Dialog$1, o as DialogTrigger, p as DialogContent, q as DialogHeader, r as DialogTitle, s as DialogDescription, u as DialogFooter, I as Input$2, v as DropdownMenu$1, w as DropdownMenuTrigger, x as DropdownMenuContent, y as DropdownMenuItem, R as RadioGroup$2, z as RadioGroupItem, S as Select$2, E as SelectTrigger$1, F as SelectValue$1, G as SelectContent, H as SelectItem, T as Tabs$2, J as TabsList, K as TabsTrigger, L as TabsContent, M as Textarea$1, N as TooltipProvider, O as Tooltip$2, P as TooltipTrigger$1, Q as TooltipContent$1, U as ChevronDown, V as ChevronRight } from "./chunks/tooltip-Dv4YEK0S.js";
 import React__default, { useState, useRef, useCallback, createContext, useContext, useEffect, useMemo, version, useReducer, forwardRef, cloneElement, isValidElement, Fragment } from "react";
 import ReactDOM__default, { flushSync, createPortal } from "react-dom";
 const SCALE = [0.25, 0.5, 0.75, 1.25, 2, 3.25, 5.25];
@@ -17714,56 +17714,6 @@ function Tooltip2({ children, content }) {
     /* @__PURE__ */ jsx(TooltipContent$1, { children: content })
   ] }) });
 }
-const iconStyle = {
-  transition: "transform 220ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms cubic-bezier(0.22, 1, 0.36, 1)"
-};
-function ThemeToggle({
-  ariaLabel = "Toggle theme"
-}) {
-  const { resolvedTheme, setTheme } = useTheme();
-  return /* @__PURE__ */ jsx(
-    MenuButton,
-    {
-      ariaLabel,
-      icon: /* @__PURE__ */ jsxs("span", { className: "relative flex size-4 items-center justify-center", children: [
-        /* @__PURE__ */ jsx(
-          Sun,
-          {
-            className: "absolute size-[1.1rem]",
-            style: {
-              ...iconStyle,
-              opacity: resolvedTheme === "dark" ? 0 : 1,
-              transform: resolvedTheme === "dark" ? "scale(0.7) rotate(-90deg)" : "scale(1) rotate(0deg)"
-            }
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          Moon,
-          {
-            className: "absolute size-[1.1rem]",
-            style: {
-              ...iconStyle,
-              opacity: resolvedTheme === "dark" ? 1 : 0,
-              transform: resolvedTheme === "dark" ? "scale(1) rotate(0deg)" : "scale(0.7) rotate(90deg)"
-            }
-          }
-        )
-      ] }),
-      items: [
-        { id: "light", label: "Light" },
-        { id: "dark", label: "Dark" },
-        { id: "system", label: "System" }
-      ],
-      onAction: (theme) => {
-        if (theme === "light" || theme === "dark" || theme === "system") {
-          setTheme(theme);
-        }
-      },
-      size: "icon",
-      variant: "ghost"
-    }
-  );
-}
 function ComponentLibraryToggle() {
   const { componentLibrary, setComponentLibrary } = useTheme();
   return /* @__PURE__ */ jsx(
@@ -17915,6 +17865,56 @@ function FileTree({
     },
     child.path
   )) });
+}
+const iconStyle = {
+  transition: "transform 220ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms cubic-bezier(0.22, 1, 0.36, 1)"
+};
+function ThemeToggle({
+  ariaLabel = "Toggle theme"
+}) {
+  const { resolvedTheme, setTheme } = useTheme();
+  return /* @__PURE__ */ jsx(
+    MenuButton,
+    {
+      ariaLabel,
+      icon: /* @__PURE__ */ jsxs("span", { className: "relative flex size-4 items-center justify-center", children: [
+        /* @__PURE__ */ jsx(
+          Sun,
+          {
+            className: "absolute size-[1.1rem]",
+            style: {
+              ...iconStyle,
+              opacity: resolvedTheme === "dark" ? 0 : 1,
+              transform: resolvedTheme === "dark" ? "scale(0.7) rotate(-90deg)" : "scale(1) rotate(0deg)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Moon,
+          {
+            className: "absolute size-[1.1rem]",
+            style: {
+              ...iconStyle,
+              opacity: resolvedTheme === "dark" ? 1 : 0,
+              transform: resolvedTheme === "dark" ? "scale(1) rotate(0deg)" : "scale(0.7) rotate(90deg)"
+            }
+          }
+        )
+      ] }),
+      items: [
+        { id: "light", label: "Light" },
+        { id: "dark", label: "Dark" },
+        { id: "system", label: "System" }
+      ],
+      onAction: (theme) => {
+        if (theme === "light" || theme === "dark" || theme === "system") {
+          setTheme(theme);
+        }
+      },
+      size: "icon",
+      variant: "ghost"
+    }
+  );
 }
 export {
   Accordion,

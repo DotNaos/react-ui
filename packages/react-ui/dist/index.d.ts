@@ -15,9 +15,9 @@ export { Text, type TextColor, type TextProps, type TextSize, } from "./primitiv
 export { Spinner, type SpinnerProps, type SpinnerSize, } from "./primitives/Spinner";
 export * from "./shell";
 export * from "./ui";
+export * from "./components/component-library-toggle";
+export * from "./components/file-tree";
 export * from "./components/theme-provider";
 export * from "./components/theme-toggle";
-export * from "./components/component-library-toggle";
 export * from "./components/tree-variants";
-export * from "./components/file-tree";
 //# sourceMappingURL=index.d.ts.map

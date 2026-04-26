@@ -9,7 +9,7 @@ export * from './empty';
 export * from './input';
 export * from './radio-group';
 export * from './select';
-export * from './tabs';
 export * from './textarea';
+export * from './tabs';
 export * from './tooltip';
 //# sourceMappingURL=index.d.ts.map
