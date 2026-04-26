@@ -11,10 +11,15 @@
     "declaration": true,
     "declarationMap": true,
     "noEmit": true,
+    "baseUrl": ".",
     "types": ["react", "react-dom"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@dotnaos/design-system": ["./packages/design-system/src/index.ts"],
+      "@dotnaos/design-system/*": ["./packages/design-system/src/*"],
+      "@dotnaos/react-ui": ["./packages/react-ui/src/index.ts"],
+      "@dotnaos/react-ui/*": ["./packages/react-ui/src/*"],
+      "@dotnaos/react-native-ui": ["./packages/react-native-ui/src/index.ts"],
+      "@dotnaos/react-native-ui/*": ["./packages/react-native-ui/src/*"]
     }
-  },
-  "include": ["src/**/*"]
+  }
 }

@@ -1,16 +1,14 @@
-name: Publish Package
+name: Publish Packages
 
 on:
   release:
     types: [published]
-  workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
 
     steps:
       - name: Checkout repository
@@ -24,9 +22,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
-          registry-url: https://npm.pkg.github.com
-          scope: "@dotnaos"
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
           cache: pnpm
 
       - name: Install dependencies
@@ -35,10 +32,26 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
-      - name: Build package
+      - name: Build packages
         run: pnpm build
 
-      - name: Publish package
-        run: pnpm publish --no-git-checks
+      - name: CDN smoke test
+        run: pnpm test:cdn
+
+      - name: Pack dry-run validation
+        run: pnpm pack:dry-run
+
+      - name: Publish design system
+        run: pnpm --filter @dotnaos/design-system publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish react-ui
+        run: pnpm --filter @dotnaos/react-ui publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish react-native-ui
+        run: pnpm --filter @dotnaos/react-native-ui publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
