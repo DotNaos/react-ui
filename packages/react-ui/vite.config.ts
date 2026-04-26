@@ -7,15 +7,20 @@ const rootDir = fileURLToPath(new URL(".", import.meta.url));
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(rootDir, "src/index.ts"),
+      entry: {
+        index: resolve(rootDir, "src/index.ts"),
+        shadcn: resolve(rootDir, "src/shadcn/index.ts"),
+      },
       formats: ["es"],
-      fileName: () => "index.js",
+      fileName: (_format, entryName) =>
+        entryName === "index" ? "index.js" : `${entryName}/index.js`,
     },
     minify: false,
     rollupOptions: {
       external: [/^react(\/.*)?$/, /^react-dom(\/.*)?$/],
       output: {
-        entryFileNames: "index.js",
+        entryFileNames: (chunkInfo) =>
+          chunkInfo.name === "index" ? "index.js" : `${chunkInfo.name}/index.js`,
         chunkFileNames: "chunks/[name]-[hash].js",
         assetFileNames: "assets/[name][extname]",
       },

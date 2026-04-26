@@ -49,7 +49,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../../packages/react-ui/src/shadcn";
+} from "@dotnaos/react-ui/shadcn";
 import { StoryFrame, StorySurface } from "./helpers";
 
 const meta = {

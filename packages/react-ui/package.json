@@ -25,6 +25,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./shadcn": {
+      "types": "./dist/shadcn/index.d.ts",
+      "import": "./dist/shadcn/index.js"
     }
   },
   "dependencies": {

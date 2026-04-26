@@ -17,6 +17,10 @@ await assertExists(indexDts);
 
 const builtSource = await readFile(indexJs, "utf8");
 
+if (builtSource.trim().length === 0) {
+  throw new Error("Expected dist/index.js to be non-empty.");
+}
+
 if (!/\bexport\b/m.test(builtSource)) {
   throw new Error("Expected dist/index.js to contain ESM exports.");
 }

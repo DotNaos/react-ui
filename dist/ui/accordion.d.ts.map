@@ -1,1 +1,0 @@
-{"version":3,"file":"accordion.d.ts","sourceRoot":"","sources":["../../src/ui/accordion.tsx"],"names":[],"mappings":"AAQA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,SAAS,CAAC;AAE7C,MAAM,WAAW,cAAc;IAC7B,kBAAkB,CAAC,EAAE,MAAM,EAAE,CAAC;IAC9B,KAAK,EAAE,aAAa,EAAE,CAAC;IACvB,QAAQ,CAAC,EAAE,OAAO,CAAC;CACpB;AAED,wBAAgB,SAAS,CAAC,EACxB,kBAAkB,EAClB,KAAK,EACL,QAAgB,GACjB,EAAE,cAAc,2CA4DhB"}
